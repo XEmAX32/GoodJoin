@@ -20,12 +20,13 @@ $this->getLogger()->info(TextFormat::BLUE . " [GoodJoin disabled]");
 }
 
 public function OnJoin(PlayerJoinEvent $event){
-  $players foreach($this->getServer()->getLevelByName("world")->getPlayers());
-  $player = $event->getPlayer()->getName();
-$players->sendMessage(TextFormat::GREEN . "+  .$this->getPlayer()->getName().");
+foreach($this->getServer->getLevelByName("world")->getPlayers() as $players){
+$player = $event->getPlayer();
+$players->sendMessage(TextFormat::GREEN . "[+] ".$this->getPlayer()->getName()." ");
 $player = $event->getPlayer();
 $message = $this->getConfig()->get("Message");
 $player->sendMessage("$message");
+}
 }
 
 public function OnPlayerQuit(PlayerQuitEvent $event){
