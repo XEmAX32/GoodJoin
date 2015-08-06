@@ -5,7 +5,7 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\event\player\PlayerSpawnEvent;
 use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\event\player\PlayerJoinEvent;
-use pockermine\utils\TextFormat;
+use pocketmine\utils\TextFormat;
 
 class Main extends PluginBase{
 
