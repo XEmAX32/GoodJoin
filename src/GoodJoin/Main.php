@@ -3,7 +3,6 @@ namespace GoodJoin;
 
 use pocketmine\Server;
 use pocketmine\plugin\PluginBase;
-use pocketmine\event\player\PlayerSpawnEvent;
 use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\utils\TextFormat;
@@ -20,7 +19,7 @@ public function onDisable(){
 $this->getLogger()->info(TextFormat::BLUE . " [GoodJoin disabled]");
 }
 
-public function OnPlayerSpawn(PlayerSpawnEvent $event){
+public function OnPlayerSpawn(PlayerJoinEvent $event){
   $players = $this->getServer()->getLevelByName("world")->getPlayers();
   $player = $event->getPlayer()->getName();
 $players->SendMessage(TextFormat::GREEN . "[+] .$this->getPlayer()->getName().");
