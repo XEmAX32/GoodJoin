@@ -20,7 +20,7 @@ $this->getLogger()->info(TextFormat::BLUE . " [GoodJoin disabled]");
 }
 
 public function OnJoin(PlayerJoinEvent $event){
-foreach($this->getServer->getLevelByName("world")->getPlayers() as $players){
+foreach($this->getServer()->getLevelByName("world")->getPlayers() as $players){
 $player = $event->getPlayer();
 $players->sendMessage(TextFormat::GREEN . "[+] ".$this->getPlayer()->getName()." ");
 $player = $event->getPlayer();
