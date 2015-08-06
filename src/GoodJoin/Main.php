@@ -19,12 +19,6 @@ public function onDisable(){
 $this->getLogger()->info(TextFormat::BLUE . " [GoodJoin disabled]");
 }
 
-public function OnPlayerJoin(PlayerJoinEvent $event){
-$player = $event->getPlayer()->getName(); 
-if(isOp->getConfig()->get("OpMessage");
-$players->sendMessage("$message");
-}
-
 public function OnPlayerSpawn(PlayerSpawnEvent $event){
   $players = $this->getServer()->getLevelByName("world")->getPlayers();
   $player = $event->getPlayer()->getName();
