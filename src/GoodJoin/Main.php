@@ -21,7 +21,7 @@ $this->getLogger()->info(TextFormat::BLUE . " [GoodJoin disabled]");
 
 public function OnPlayerJoin(PlayerJoinEvent $event){
 $player = $event->getPlayer()->getName(); 
-isset(isOp getConfig()->get("OpMessage");
+if(isOp getConfig()->get("OpMessage");
 $players->sendMessage("$message");
 }
 
