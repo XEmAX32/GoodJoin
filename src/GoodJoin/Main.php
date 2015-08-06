@@ -9,7 +9,7 @@ use pockermine\utils\TextFormat;
 
 class Main extends PluginBase{
 
-public funtion onEnable(){
+public function onEnable(){
 $this->getServer->getPluginManager()->registerEvents($this, $this);
 $this->getLogger->info(TextFormat::BLUE . " [GoodJoin enabled]");
 }
