@@ -9,7 +9,7 @@ use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\utils\TextFormat;
 use pocketmine\event\Listener;
 
-class Main extends PluginBase{
+class Main extends PluginBase implements Listener{
 
 public function onEnable(){
 $this->getServer()->getPluginManager()->registerEvents($this, $this);
