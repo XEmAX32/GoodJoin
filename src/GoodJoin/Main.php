@@ -5,8 +5,18 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\event\player\PlayerSpawnEvent;
 use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\event\player\PlayerJoinEvent;
+use pockermine\utils\TextFormat;
 
 class Main extends PluginBase{
+
+public funtion onEnable(){
+$this->getServer->getPluginManager()->registerEvents($this, $this);
+$this->getLogger->info(TextFormat::BLUE . " [GoodJoin enabled]");
+}
+
+public function onDisable(){
+$this->getLogger()->info(TextFormat::BLUE . " [GoodJoin disabled]");
+}
 
 public function OnPlayerSpawn(PlayerSpawnEvent $event){
   $players = $this->getServer()->getLevelByName("world")->getPlayers();
