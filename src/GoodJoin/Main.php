@@ -10,7 +10,6 @@ use pocketmine\utils\TextFormat;
 class Main extends PluginBase{
 
 public function onEnable(){
-$this->getServer->getPluginManager()->registerEvents($this, $this);
 $this->getLogger->info(TextFormat::BLUE . " [GoodJoin enabled]");
 }
 
