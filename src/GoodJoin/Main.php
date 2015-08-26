@@ -13,6 +13,7 @@ class Main extends PluginBase implements Listener{
 public function onEnable(){
 $this->getServer()->getPluginManager()->registerEvents($this, $this);
 $this->getLogger()->info(TextFormat::BLUE . " [GoodJoin enabled]");
+$this->saveDefaultConfig();
 }
 
 public function onDisable(){
@@ -20,19 +21,27 @@ $this->getLogger()->info(TextFormat::BLUE . " [GoodJoin disabled]");
 }
 
 public function OnJoin(PlayerJoinEvent $event){
-foreach($this->getServer()->getLevelByName("world")->getPlayers() as $players){
+foreach($this->getServer()->getPlayers() as $players){
 $player = $event->getPlayer();
-$players->sendMessage(TextFormat::GREEN . "[+] ".$this->getPlayer()->getName()." ");
+$players->sendMessage(TextFormat::GREEN . "[+] " $this->getPlayer()->getName()." ");
 $player = $event->getPlayer();
-$message = $this->getConfig()->get("Message");
-$player->sendMessage("$message");
+$message = $this->getConfig()->get("JoinMessage");
+$player->sendMessage("$joinmessage");
 }
 }
 
-public function OnPlayerQuit(PlayerQuitEvent $event){
-  $players = $this->getServer()->getLevelByName("world")->getPlayers();
+public function OnQuit(PlayerQuitEvent $event){
+  foreach($this->getServer()->getPlayers() sa $ps){
   $player = $event->getPlayer()->getName();
-$players->SendMessage(TextFormat::RED . "- .$this->getPlayer()->getName().");
+  $ps->SendMessage(TextFormat::RED . "[-]" $this->getPlayer()->getName().");
+}
+}
+
+public function PlayerFirstJoin(PlayerFirstJoinEvent $e){
+$firstjoinmessage = $this->getConfig()->get("firstjoinmessage");
+foreach($this->getServer()->getPlayers() as $ps){
+$ps->sendMessage($firstjoinmessage." ");
+}
 }
 }
 ?>
