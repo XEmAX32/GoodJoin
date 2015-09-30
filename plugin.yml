@@ -1,6 +1,6 @@
 name: GoodJoin
 main: GoodJoin\Main
-description: join message
+description: Cutom Join or Leave Messages
 version: 1.0
 api: [1.12.0]
 author: XEmAX32
