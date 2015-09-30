@@ -45,6 +45,11 @@ foreach($this->getServer()->getOnlinePlayers() as $ps){
   if($this->getConfig()->get("MessageAtJoin")){
   $player->sendMessage($JoinMessage." ");
       }
+  if($player->isOp()){
+    foreach($this->getServer()->getOnlinePlayers() as $ps){
+      $ps->sendMessage($OpJoinMessage." ");
+    }
+  }
   $player->sendMessage(TextFormat::GREEN . "[+] ".$name);
         }
   }
