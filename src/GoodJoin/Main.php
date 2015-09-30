@@ -7,6 +7,8 @@ use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\utils\TextFormat;
 use pocketmine\event\Listener;
+use pocketmine\level\particle\HeartParticle;
+use pocketmine\math\Vector3;
 
 class Main extends PluginBase implements Listener{
 
@@ -25,6 +27,10 @@ $name = $e->getPlayer()->getName();
 $player = $e->getPlayer();
 $Effect = $this->getConfig()->get("Effect"));
 $Sound = $this->getConfig()->get("Sound"));
+$level = $player->getLevel();
+$x = $player->getX();
+$z = $player->getZ();
+$y = $player->getY();
 $Particles = $this->getConfig()->get("Particles"));
 $Command = $this->getConfig()->get("Command");
 $OpJoinMessage = $this->getConfig()->get("OpJoinMessage"));
@@ -37,6 +43,7 @@ foreach($this->getServer()->getOnlinePlayers() as $ps){
     $
       }
   if($this->getConfig()->get("JoinParticles") == "true"){
+    $level->addParticle(new HeartParticle(new Vector3($x, $y, $z)
       }
   if($this->getConfig()->get("JoinCommand") == "true"){
       }
