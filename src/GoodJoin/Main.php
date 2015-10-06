@@ -1,6 +1,8 @@
 <?php
+
 namespace GoodJoin;
 
+use pocketmine\player\Player;
 use pocketmine\Server;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\player\PlayerQuitEvent;
