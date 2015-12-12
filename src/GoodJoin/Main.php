@@ -70,7 +70,7 @@ $player->sendMessage(TextFormat::RED . "[-] ".$name);
 }
 }
 
-public function WorldJoinMessage( $e){
+/*public function WorldJoinMessage( $e){
 $world = $e->getPlayer()->getLevel()->getName();
 $name = $e->getPlayer()->getName();
 if($this->getConfig()->get("WorldJoinAndQuit") == "true"){
@@ -88,7 +88,7 @@ foreach($this->getServer()->getOnlinePlayers() as $ps){
   $ps->sendMessage(TextFormat::RED . .$world." [-] ".$name);
     }
   }
-}
+}*/
 
 public function PlayerFirstJoin(PlayerFirstJoinEvent $e){
 $firstjoinmessage = $this->getConfig()->get("firstjoinmessage");
