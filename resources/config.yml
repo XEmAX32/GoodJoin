@@ -1,22 +1,4 @@
 #Here Write The Player Join Message
-JoinMessage: "§eWelcome To This Server"
+#FirstJoinMessage: "§eWelcome To This Server"
 #Here Write The OpJoinMessage
-OpJoinMessage: "§eAn Op Has Joined The Server"
-#Here Write The JoinSound, You Can Use
-Sound: 
-#Here Write The JoinEffect, You Can Use
-Effect:
-#Here Write The JoinCommand, You Can Use The Variable {player} For The Name Of The Player
-Command:
-#Here Write The JoinParticles, You Can Use
-Particles:
-#Here Write If You Want To Use The JoinSound Feauture (True Or False)
-JoinSound:
-#Here Write If You Want To Use The JoinEffect Feauture (True Or False)
-JoinEffect:
-#Here Write If You Want To Use The JoinCommand Feauture (True Or False)
-JoinCommand:
-#Here Write If You Want To Use The JoinParticles Feauture (True Or False)
-JoinParticles:
-#Here Write If You Want To Use The WorldJoinAndQuit Feauture (True Or False)
-WorldJoinAndQuit:
+#OpJoinMessage: "§eAn Op Has Joined The Server"
