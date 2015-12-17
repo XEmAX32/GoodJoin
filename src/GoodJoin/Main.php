@@ -40,6 +40,14 @@ $name = $e->getPlayer()->getName();
 	}
   }
   
-public function onCommand(){
-}
+public function onCommand(CommandSender $sender, Command $command){
+	switch($command->getName()){
+		case "setspawn":
+			$x = $sender->getX();
+			$y = $sender->getY();
+			$z = $sender->GetZ();
+			$sender->sendMessage(TextFormat::BLUE . "New Spawn On $x $y $z");
+			break;
+	}
+    }
 }
