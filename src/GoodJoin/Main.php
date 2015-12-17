@@ -2,99 +2,39 @@
 
 namespace GoodJoin;
 
-use pocketmine\player\Player;
-use pocketmine\Server;
-use pocketmine\plugin\PluginBase;
-use pocketmine\event\player\PlayerQuitEvent;
-use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\utils\TextFormat;
 use pocketmine\event\Listener;
-use pocketmine\level\particle\HeartParticle;
-use pocketmine\math\Vector3;
+use pocketmine\event\player\PlayerJoinEvent;
+use pocketmine\event\player\PlayerQuitEvent;
+use pocketmine\plugin\PluginBase;
 
 class Main extends PluginBase implements Listener{
 
-public function onEnable(){
+public function OnEnable(){
 $this->getServer()->getPluginManager()->registerEvents($this, $this);
-$this->getLogger()->info(TextFormat::BLUE . " [GoodJoin enabled]");
-$this->saveDefaultConfig();
+$this->getLogger()->info(TextFormat::BLUE . "[GoodJoin enabled]");
 }
 
 public function onDisable(){
 $this->getLogger()->info(TextFormat::BLUE . " [GoodJoin disabled]");
 }
 
-public function OnJoin(PlayerJoinEvent $event){
+public function OnJoin(PlayerJoinEvent $e){
 $name = $e->getPlayer()->getName();
 $player = $e->getPlayer();
-$Effect = $this->getConfig()->get("Effect"));
-$Sound = $this->getConfig()->get("Sound"));
-$level = $player->getLevel();
-$x = $player->getX();
-$z = $player->getZ();
-$y = $player->getY();
-$Particles = $this->getConfig()->get("Particles"));
-$Command = $this->getConfig()->get("Command");
-$OpJoinMessage = $this->getConfig()->get("OpJoinMessage"));
-$JoinMessage = $this->getConfig()->get("JoinMessage"));
-foreach($this->getServer()->getOnlinePlayers() as $ps){
-  if($player->isOp()){
-    $ps->sendMessage($OpJoinMessage." ");
-      }
-  if($this->getConfig()->get("JoinEffect") == "true"){
-    $
-      }
-  if($this->getConfig()->get("JoinParticles") == "true"){
-    $level->addParticle(new HeartParticle(new Vector3($x, $y, $z)
-      }
-  if($this->getConfig()->get("JoinCommand") == "true"){
-      }
-  if($this->getConfig()->get("JoinSound") == "true"){
-      }
-  if($this->getConfig()->get("MessageAtJoin")){
-  $player->sendMessage($JoinMessage." ");
-      }
-  if($player->isOp()){
-    foreach($this->getServer()->getOnlinePlayers() as $ps){
-      $ps->sendMessage($OpJoinMessage." ");
-    }
-  }
-  $player->sendMessage(TextFormat::GREEN . "[+] ".$name);
-        }
-  }
+	foreach($this->getServer()->getOnlinePlayers() as $ps){
+		if($player->isOp()){
+			$ps->sendMessage(TextFormat::BLUE . "An Op Joined The Server");
+		}else{
+			$ps->sendMessage(TextFormat::GREEN . "[+] $name");
+		}
+	}
+}
 
-    
-public function OnQuit(PlayerQuitEvent $e){
+public function onQuit(PlayerQuitEvent $e){
 $name = $e->getPlayer()->getName();
-$player->sendMessage(TextFormat::RED . "[-] ".$name);
-}
-}
-
-/*public function WorldJoinMessage( $e){
-$world = $e->getPlayer()->getLevel()->getName();
-$name = $e->getPlayer()->getName();
-if($this->getConfig()->get("WorldJoinAndQuit") == "true"){
-foreach($this->getServer()->getOnlinePlayers() as $ps){
-  $ps->sendMessage(TextFormat::GREEN . .$world." [+] ".$name);
-     }
+	foreach($this->getServer()->getOnlinePlayers() as $ps){
+		$ps->sendMessage(TextFormat::RED . "[-] $name");
+	}
   }
 }
-
-public function WorldQuitEvent( $e){
-$world = $e->getPlayer()->getLevel()->getName();
-$name = $e->getPlayer()->getName();
-if($this->getConfig()->get("WorldJoinAndQuit") == "true"){
-foreach($this->getServer()->getOnlinePlayers() as $ps){
-  $ps->sendMessage(TextFormat::RED . .$world." [-] ".$name);
-    }
-  }
-}*/
-
-public function PlayerFirstJoin(PlayerFirstJoinEvent $e){
-$firstjoinmessage = $this->getConfig()->get("firstjoinmessage");
-foreach($this->getServer()->getPlayers() as $ps){
-  $ps->sendMessage($firstjoinmessage." ");
-    }
-  }
-}
-?>
