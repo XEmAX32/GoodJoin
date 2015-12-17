@@ -6,6 +6,8 @@ use pocketmine\utils\TextFormat;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerQuitEvent;
+use pocketmine\command\Command;
+use pocketmine\command\CommandSender;
 use pocketmine\plugin\PluginBase;
 
 class Main extends PluginBase implements Listener{
@@ -37,4 +39,7 @@ $name = $e->getPlayer()->getName();
 		$ps->sendMessage(TextFormat::RED . "[-] $name");
 	}
   }
+  
+public function onCommand(){
+}
 }
